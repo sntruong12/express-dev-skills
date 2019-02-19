@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <% skills.forEach((s, i) => { %>
+        <a href="/skills/<%= i %>"><%= s.title %></a>
+        <form action="/skills/<%= i %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+      <% }); %>
+    </div>
+    <a href="skills/new"><button>create a new skill</button></a>
+  </body>
+</html>
